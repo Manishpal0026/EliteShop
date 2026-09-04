@@ -1,0 +1,780 @@
+/* =========================================================
+   SHOPNEST BANNER
+========================================================= */
+
+.shopnest-banner {
+    width: 100%;
+    padding: 0 30px;
+    margin: 25px 0 35px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BANNER CONTAINER
+========================================================= */
+
+.banner-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 1400px;
+
+    height: 460px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #111;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.banner-background {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    animation: bannerZoom 4s ease-in-out;
+
+    z-index: -2;
+}
+
+
+/* =========================================================
+   IMAGE ZOOM ANIMATION
+========================================================= */
+
+@keyframes bannerZoom {
+
+    0% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.banner-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.60) 35%,
+            rgba(0, 0, 0, 0.20) 70%,
+            rgba(0, 0, 0, 0.05) 100%
+        );
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.banner-content {
+    position: absolute;
+
+    left: 7%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 48%;
+
+    color: #fff;
+
+    animation: contentSlide 0.7s ease;
+}
+
+
+/* =========================================================
+   CONTENT ANIMATION
+========================================================= */
+
+@keyframes contentSlide {
+
+    from {
+        opacity: 0;
+        transform: translate(-25px, -50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+}
+
+
+/* =========================================================
+   TAG
+========================================================= */
+
+.banner-tag {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    padding: 7px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.banner-content h1 {
+    margin: 0;
+
+    font-size: clamp(38px, 4vw, 62px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+}
+
+.banner-content h1 span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #c9c9c9
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.banner-content p {
+    max-width: 550px;
+
+    margin: 20px 0 25px;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SHOP BUTTON
+========================================================= */
+
+.banner-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 22px;
+
+    border-radius: 7px;
+
+    background: #fff;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.banner-button:hover {
+    transform: translateY(-3px);
+
+    background: #f2f2f2;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Button arrow */
+
+.banner-button-arrow {
+    font-size: 19px;
+
+    transition: transform 0.25s ease;
+}
+
+.banner-button:hover .banner-button-arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   OFFER BADGE
+========================================================= */
+
+.banner-offer {
+    position: absolute;
+
+    top: 40px;
+    right: 7%;
+
+    width: 145px;
+    height: 145px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    backdrop-filter: blur(12px);
+
+    color: #fff;
+
+    animation: offerFloat 3s ease-in-out infinite;
+}
+
+.banner-offer::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.45);
+
+    border-radius: 50%;
+}
+
+.banner-offer span {
+    position: relative;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.banner-offer small {
+    position: relative;
+
+    margin-top: 8px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.3px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   OFFER FLOAT ANIMATION
+========================================================= */
+
+@keyframes offerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION ARROWS
+========================================================= */
+
+.banner-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    color: #111;
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+    z-index: 5;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.banner-arrow:hover {
+    background: #fff;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+.banner-arrow-left {
+    left: 22px;
+}
+
+.banner-arrow-right {
+    right: 22px;
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.banner-dots {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    z-index: 5;
+}
+
+.banner-dot {
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+.banner-dot.active {
+    width: 28px;
+
+    border-radius: 10px;
+
+    background: #fff;
+}
+
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.banner-counter {
+    position: absolute;
+
+    bottom: 25px;
+
+    right: 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.counter-line {
+    width: 35px;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .shopnest-banner {
+        padding: 0 20px;
+    }
+
+    .banner-container {
+        height: 420px;
+
+        border-radius: 12px;
+    }
+
+    .banner-content {
+        left: 6%;
+
+        width: 55%;
+    }
+
+    .banner-offer {
+        right: 6%;
+
+        width: 120px;
+        height: 120px;
+    }
+
+    .banner-offer span {
+        font-size: 16px;
+    }
+
+    .banner-arrow {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .shopnest-banner {
+        padding: 0 15px;
+
+        margin: 20px 0 25px;
+    }
+
+    .banner-container {
+        height: 480px;
+
+        border-radius: 12px;
+    }
+
+
+    /* Mobile image */
+
+    .banner-background {
+        background-position: 65% center;
+    }
+
+
+    /* Stronger mobile overlay */
+
+    .banner-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.25) 0%,
+                rgba(0, 0, 0, 0.55) 45%,
+                rgba(0, 0, 0, 0.88) 100%
+            );
+    }
+
+
+    /* Content */
+
+    .banner-content {
+        left: 25px;
+        right: 25px;
+
+        top: auto;
+        bottom: 65px;
+
+        transform: none;
+
+        width: auto;
+
+        animation: mobileContentSlide 0.7s ease;
+    }
+
+    @keyframes mobileContentSlide {
+
+        from {
+            opacity: 0;
+
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+    }
+
+
+    .banner-tag {
+        margin-bottom: 12px;
+
+        padding: 6px 10px;
+
+        font-size: 9px;
+    }
+
+
+    .banner-content h1 {
+        font-size: 36px;
+
+        line-height: 1.08;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    .banner-content p {
+        margin: 14px 0 18px;
+
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+
+    .banner-button {
+        padding: 12px 18px;
+
+        font-size: 13px;
+    }
+
+
+    /* Offer badge */
+
+    .banner-offer {
+        top: 20px;
+        right: 20px;
+
+        width: 92px;
+        height: 92px;
+    }
+
+    .banner-offer::before {
+        inset: 5px;
+    }
+
+    .banner-offer span {
+        font-size: 12px;
+    }
+
+    .banner-offer small {
+        margin-top: 4px;
+
+        font-size: 6px;
+
+        letter-spacing: 0.8px;
+    }
+
+
+    /* Arrows */
+
+    .banner-arrow {
+        width: 36px;
+        height: 36px;
+
+        font-size: 16px;
+    }
+
+    .banner-arrow-left {
+        left: 12px;
+    }
+
+    .banner-arrow-right {
+        right: 12px;
+    }
+
+
+    /* Dots */
+
+    .banner-dots {
+        bottom: 20px;
+    }
+
+
+    /* Hide counter */
+
+    .banner-counter {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .shopnest-banner {
+        padding: 0 10px;
+    }
+
+    .banner-container {
+        height: 460px;
+    }
+
+    .banner-content {
+        left: 20px;
+        right: 20px;
+
+        bottom: 60px;
+    }
+
+    .banner-content h1 {
+        font-size: 31px;
+    }
+
+    .banner-content p {
+        font-size: 12px;
+
+        max-width: 330px;
+    }
+
+    .banner-button {
+        padding: 11px 16px;
+    }
+
+    .banner-offer {
+        width: 82px;
+        height: 82px;
+
+        top: 18px;
+        right: 18px;
+    }
+
+    .banner-offer span {
+        font-size: 10px;
+    }
+
+    .banner-offer small {
+        font-size: 5px;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .banner-background,
+    .banner-content,
+    .banner-offer,
+    .banner-button,
+    .banner-arrow,
+    .banner-dot {
+        animation: none;
+
+        transition: none;
+    }
+}
+
